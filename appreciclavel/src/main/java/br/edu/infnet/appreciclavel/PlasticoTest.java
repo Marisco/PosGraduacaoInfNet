@@ -5,35 +5,30 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
-import br.edu.infnet.appreciclavel.model.domain.Plastico.tipo;
+import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 
 @Component
 public class PlasticoTest implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
 		Plastico p1 = new Plastico();
-		p1.tipo =  tipo.pet1000;
+		p1.tipo =  TipoPlastico.pet1000;
 		p1.marca = "Campo Largo";
-		p1.descricao = "VINHO";
-		p1.peso = (float) 0.15;
-		p1.valor = (float) 0.04;
+		p1.descricao = "VINHO";		
 		System.out.println("Plastico: " + p1);
 		
 		Plastico p2 = new Plastico();
-		p2.tipo =  tipo.pet600;
+		p2.tipo =  TipoPlastico.pet600;
 		p2.marca = "Coca-Cola";
-		p2.descricao = "Refrigerante";
-		p2.peso = (float) 0.5;
-		p2.valor = (float) 0.02;
+		p2.descricao = "Refrigerante";		
 		System.out.println("Plastico: " + p2);
 		
 		Plastico p3 = new Plastico();
-		p3.tipo =  tipo.pvc;
+		p3.tipo =  TipoPlastico.pvc;
 		p3.marca = "TIGRE";
-		p3.descricao = "TUBO 10";
-		p3.peso = (float) 0.25;
-		p3.valor = (float) 0.06;
+		p3.descricao = "TUBO 10";		
 		System.out.println("Plastico: " + p3);
 		
 	}

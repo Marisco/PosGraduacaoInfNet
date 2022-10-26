@@ -1,14 +1,14 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
-public class Reciclavel {
+public abstract class Reciclavel {
 	
-	public boolean isEmBoaCondicao;
+	public boolean reutilizavel;
 	public float peso;
 	public float valor;
 	
 	@Override
 	public String toString() {
 		
-		return isEmBoaCondicao+ "; " + peso + "; " + valor; 
+		return reutilizavel+ "; " + peso + "; " + valor; 
 	}
 }
