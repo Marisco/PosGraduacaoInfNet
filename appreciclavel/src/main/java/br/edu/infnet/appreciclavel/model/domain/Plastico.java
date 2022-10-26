@@ -2,17 +2,43 @@ package br.edu.infnet.appreciclavel.model.domain;
 
 public class Plastico extends Reciclavel {
 	
-	public TipoPlastico tipo;
-	public String marca;
-	public String descricao;		
+	protected TipoPlastico tipo;
+	protected String marca;
+	protected String descricao;		
 	
 	public enum TipoPlastico {filme, Tetra , pvc, pet500, pet600, pet1000, pet1500, pet2000, pet2500,  pet5000};
 	
 	@Override
 	public String toString() {
 		
-		return tipo.name() + "; " + marca + "; " + descricao; 
+		return super.toString() + "; " + tipo.name() + "; " + marca + "; " + descricao; 
 	}
+
+	public TipoPlastico getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoPlastico tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	
 
 
 }

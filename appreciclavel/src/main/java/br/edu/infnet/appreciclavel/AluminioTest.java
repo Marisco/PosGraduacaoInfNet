@@ -12,22 +12,37 @@ public class AluminioTest implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+		System.out.println("--------Cadastro de Alumínios--------");
+		
 		Aluminio a1 = new Aluminio();
-		a1.tipo =  TipoAluminio.lata473;
-		a1.marca = "Heineken";
-		a1.descricao = "CERVEJA";		
+		a1.setCodigo(4);				
+		a1.setReutilizavel(false);
+		a1.setPeso((float) 0.11);
+		a1.setValor((float) 0.05);
+		a1.setTipo(TipoAluminio.lata473);
+		a1.setMarca("Heineken");
+		a1.setDescricao("CERVEJA");		
 		System.out.println("Aluminio: " + a1);
 		
 		Aluminio a2 = new Aluminio();
-		a2.tipo =  TipoAluminio.Lata250;
-		a2.marca = "Coca Cola";
-		a2.descricao = "Refrigerante";		
+		a2.setCodigo(5);				
+		a2.setReutilizavel(false);
+		a2.setPeso((float) 0.06);
+		a1.setValor((float) 0.04);
+		a2.setTipo(TipoAluminio.Lata250);
+		a2.setMarca("Coca Cola");
+		a2.setDescricao("Refrigerante");		
 		System.out.println("Aluminio: " + a2);
 		
 		Aluminio a3 = new Aluminio();
-		a3.tipo =  TipoAluminio.lata500;
-		a3.marca = "RED BULL";
-		a3.descricao = "ENERGÉTICO";		
+		a3.setCodigo(6);				
+		a3.setReutilizavel(false);
+		a1.setPeso((float) 0.08);
+		a3.setValor((float) 0.03);
+		a3.setTipo(TipoAluminio.lata500);
+		a3.setMarca("RED BULL");
+		a3.setDescricao("ENERGÉTICO");		
 		System.out.println("Aluminio: " + a3);
 		
 	}
