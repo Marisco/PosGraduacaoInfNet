@@ -1,16 +1,29 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Entrega {
 	private String descricao;
 	private LocalDateTime data;
 	private boolean web;
 	private Reciclador reciclador;
+	private List<Reciclavel> reciclaveis;
+
+	public Entrega() {
+	
+		data = LocalDateTime.now();
+		web = true;
+	}
+	
+	public Entrega(Reciclador reciclador) {
+		this();
+		this.reciclador = reciclador;		
+	}
 
 	@Override
 	public String toString() {
-		return descricao + ";" + data + ";" + web + ";" +reciclador;
+		return descricao + ";" + data + ";" + web + ";" + reciclador + ";" + reciclaveis.size();
 	}
 
 	public String getDescricao() {
@@ -21,14 +34,6 @@ public class Entrega {
 		this.descricao = descricao;
 	}
 
-	public LocalDateTime getData() {
-		return data;
-	}
-
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	}
-
 	public boolean isWeb() {
 		return web;
 	}
@@ -37,14 +42,12 @@ public class Entrega {
 		this.web = web;
 	}
 
-	public Reciclador getReciclador() {
-		return reciclador;
+	public List<Reciclavel> getReciclaveis() {
+		return reciclaveis;
 	}
 
-	public void setReciclador(Reciclador reciclador) {
-		this.reciclador = reciclador;
+	public void setReciclaveis(List<Reciclavel> reciclaveis) {
+		this.reciclaveis = reciclaveis;
 	}
-
 	
-
 }
