@@ -64,15 +64,13 @@
 				</ul>
 			</nav>
 		</div>
-	</div>
-
-	<h3>Lista de Alumínios:</h3>
+	</div>	
 	<div class="cart">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="title">
-						<i class="fa fa fa-trash-o"></i> Alumínios <span class="color"></span>
+						<i class="fa fa-star"></i> Alumínios <span class="color"></span>
 					</h3>
 					<br />
 					<table class="table table-striped tcart">
