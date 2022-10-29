@@ -75,7 +75,7 @@ public class EntregaTest implements ApplicationRunner {
 		Entrega e2 = new Entrega(r1);						
 		e2.setWeb(false);
 		e2.setDescricao("Segunda Entrega");
-		e1.setReciclaveis(reciclaveisPrimeiraEntrega);
+		e2.setReciclaveis(reciclaveisPrimeiraEntrega);
 		System.out.println("=> " + e2);
 		
 		Reciclador r2 = new Reciclador();
@@ -85,7 +85,7 @@ public class EntregaTest implements ApplicationRunner {
 		
 		Entrega e3 = new Entrega(r2);		
 		e3.setDescricao("Terceira Entrega");
-		e1.setReciclaveis(reciclaveisSegundaEntrega);
+		e3.setReciclaveis(reciclaveisSegundaEntrega);
 		System.out.println("=> " + e3);
 		
 	}
