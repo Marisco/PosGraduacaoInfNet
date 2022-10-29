@@ -29,6 +29,14 @@ public class Entrega {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public LocalDateTime getData() {
+		return data;
+	}
+	
+	public Reciclador getReciclador() {
+		return reciclador;
+	}
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;

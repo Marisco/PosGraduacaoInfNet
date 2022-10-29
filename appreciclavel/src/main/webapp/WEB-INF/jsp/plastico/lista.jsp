@@ -10,7 +10,7 @@
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/blue.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/favicon/favicon.png">
-<title>Cadastro de Plásticos</title>
+<title>Listagem de Plásticos</title>
 </head>
 <body>
 	<header>
@@ -19,7 +19,7 @@
 				<div class="col-md-4">
 					<div class="logo">
 						<h1>
-							<a href="#">App<span class="color bold">Plásticos</span></a>
+							<a href="#">App<span class="color bold">Reciclável</span></a>
 						</h1>
 						<p class="meta">Reuse, Recicle ou Reduza!!!</p>
 					</div>

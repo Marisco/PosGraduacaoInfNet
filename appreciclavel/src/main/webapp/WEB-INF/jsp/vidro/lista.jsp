@@ -19,7 +19,7 @@
 				<div class="col-md-4">
 					<div class="logo">
 						<h1>
-							<a href="#">App<span class="color bold">Plásticos</span></a>
+							<a href="#">App<span class="color bold">Reciclável</span></a>
 						</h1>
 						<p class="meta">Reuse, Recicle ou Reduza!!!</p>
 					</div>
@@ -87,15 +87,15 @@
 							</tr>
 						</thead>
 						<tbody>						
-							<c:forEach var="a" items="${listagem}">
+							<c:forEach var="v" items="${listagem}">
 								<tr>								
-									<td>${a.codigo}</td>
-									<td>${a.marca}</td>
-									<td>${a.descricao}</td>
-									<td>${a.tipo}</td>
-									<td>${a.reutilizavel}</td>
-									<td>${a.peso}</td>
-									<td>${a.valor}</td>
+									<td>${v.codigo}</td>
+									<td>${v.marca}</td>
+									<td>${v.descricao}</td>
+									<td>${v.tipo}</td>
+									<td>${v.reutilizavel}</td>
+									<td>${v.peso}</td>
+									<td>${v.valor}</td>
 								</tr>
 							</c:forEach>
 						<tr>
