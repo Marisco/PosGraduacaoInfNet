@@ -29,7 +29,7 @@ public class AluminioTest implements ApplicationRunner {
 		a2.setCodigo(5);				
 		a2.setReutilizavel(false);
 		a2.setPeso((float) 0.06);
-		a1.setValor((float) 0.04);
+		a2.setValor((float) 0.04);
 		a2.setTipo(TipoAluminio.Lata250);
 		a2.setMarca("Coca Cola");
 		a2.setDescricao("Refrigerante");		
@@ -38,7 +38,7 @@ public class AluminioTest implements ApplicationRunner {
 		Aluminio a3 = new Aluminio();
 		a3.setCodigo(6);				
 		a3.setReutilizavel(false);
-		a1.setPeso((float) 0.08);
+		a3.setPeso((float) 0.08);
 		a3.setValor((float) 0.03);
 		a3.setTipo(TipoAluminio.lata500);
 		a3.setMarca("RED BULL");
