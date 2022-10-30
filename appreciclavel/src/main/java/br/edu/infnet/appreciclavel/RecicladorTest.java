@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appreciclavel.controller.RecicladorController;
 import br.edu.infnet.appreciclavel.model.domain.Reciclador;
 
 
@@ -16,21 +17,24 @@ public class RecicladorTest implements ApplicationRunner {
 		System.out.println("--------Cadastro de Recicladores--------");
 		
 		Reciclador r1 = new Reciclador();
-		r1.setNome("Maria Silva");
+		r1.setNome("MARIA SILVA");
 		r1.setCpf("111.111.111-01");
-		r1.setEmail("maria@gmail.com");		
+		r1.setEmail("MARIA@GMAIL.COM");	
+		RecicladorController.incuir(r1);
 		System.out.println("Reciclador: " + r1);
 		
 		Reciclador r2 = new Reciclador();
-		r2.setNome("João Silva");
+		r2.setNome("JOÃO SILVA");
 		r2.setCpf("222.222.222-02");
-		r2.setEmail("joão@gmail.com");
+		r2.setEmail("JOÃO@GMAIL.COM");
+		RecicladorController.incuir(r2);
 		System.out.println("Reciclador: " + r2);
 		
 		Reciclador r3 = new Reciclador();
-		r3.setNome("José Silva");
+		r3.setNome("JOSÉ SILVA");
 		r3.setCpf("333.333.333.-03");
-		r3.setEmail("jose@gmail.com");
+		r3.setEmail("JOSE@GMAIL.COM");
+		RecicladorController.incuir(r3);
 		System.out.println("Reciclador: " + r3);
 		
 	}
