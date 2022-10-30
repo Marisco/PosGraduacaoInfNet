@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infnet.appreciclavel.model.domain.Entrega;
 import br.edu.infnet.appreciclavel.model.domain.Reciclavel;
@@ -30,6 +31,17 @@ public class EntregaController {
 
 	public static Collection<Entrega> obterLista() {
 		return mapa.values();
+	}
+
+	public static void excluir(Integer id) {
+		mapa.remove(id);
+	}
+
+	@GetMapping(value = "entrega/{id}/excluir")
+	public String exclusao(@PathVariable Integer id) {
+		excluir(id);
+		return "redirect:/entrega/lista";
+
 	}
 
 	@GetMapping(value = "entrega/lista")

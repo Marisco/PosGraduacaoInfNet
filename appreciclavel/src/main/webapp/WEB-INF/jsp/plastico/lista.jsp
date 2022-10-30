@@ -84,23 +84,29 @@
 								<th>Reutilizável</th>
 								<th>Peso</th>
 								<th>Valor</th>
+								<th></th>
 
 							</tr>
 						</thead>
 						<tbody>						
-							<c:forEach var="a" items="${listagem}">
+							<c:forEach var="p" items="${listagem}">
 								<tr>					
-									<td>${a.id}</td>			
-									<td>${a.codigo}</td>
-									<td>${a.marca}</td>
-									<td>${a.descricao}</td>
-									<td>${a.tipo}</td>
-									<td>${a.reutilizavel}</td>
-									<td>${a.peso}</td>
-									<td>${a.valor}</td>
+									<td>${p.id}</td>			
+									<td>${p.codigo}</td>
+									<td>${p.marca}</td>
+									<td>${p.descricao}</td>
+									<td>${p.tipo}</td>
+									<td>${p.reutilizavel}</td>
+									<td>${p.peso}</td>
+									<td>${p.valor}</td>
+									<td><button class="btn btn-xs btn-default" title="Excluir">
+											<a href="/plastico/${p.id}/excluir"><i
+												class="fa fa-times"></i></a>
+										</button></td>
 								</tr>
 							</c:forEach>
 						<tr>
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th></th>

@@ -76,8 +76,11 @@
 					<br />
 					<c:forEach var="e" items="${listagem}">
 						<h3 class="title">
-							<i class="fa fa-check"></i>${e.id} => ${e.descricao} em
-							${e.data} <span class="color"></span>
+							<i class="fa fa-check"></i>${e.id} => ${e.descricao} em ${e.data}
+							<span class="color"></span>
+							<button class="btn btn-xs btn-default pull-right" title="Excluir">
+								<a href="/entrega/${e.id}/excluir"><i class="fa fa-times"></i></a>
+							</button>
 						</h3>
 						<h3 class="title">
 							<i class="fa fa-user"></i> ${e.reciclador.nome} <span
@@ -93,7 +96,6 @@
 									<th>Web</th>
 									<th>Peso</th>
 									<th>Valor</th>
-
 								</tr>
 							</thead>
 							<tbody>

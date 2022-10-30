@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
 
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
@@ -23,6 +24,17 @@ public class VidroController {
 
 	public static Collection<Vidro> obterLista() {
 		return mapa.values();
+	}
+
+	public static void excluir(Integer id) {
+		mapa.remove(id);
+	}
+
+	@GetMapping(value = "vidro/{id}/excluir")
+	public String exclusao(@PathVariable Integer id) {
+		excluir(id);
+		return "redirect:/vidro/lista";
+
 	}
 
 	@GetMapping(value = "vidro/lista")

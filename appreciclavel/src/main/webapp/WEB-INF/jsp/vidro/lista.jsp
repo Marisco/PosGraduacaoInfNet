@@ -85,6 +85,7 @@
 								<th>Reutilizável</th>
 								<th>Peso</th>
 								<th>Valor</th>
+								<th></th>
 
 							</tr>
 						</thead>
@@ -99,9 +100,15 @@
 									<td>${v.reutilizavel}</td>
 									<td>${v.peso}</td>
 									<td>${v.valor}</td>
+									<td><button class="btn btn-xs btn-default" title="Excluir">
+											<a href="/vidro/${v.id}/excluir"><i
+												class="fa fa-times"></i></a>
+										</button></td>
+									
 								</tr>
 							</c:forEach>
 							<tr>
+								<th></th>
 								<th></th>
 								<th></th>
 								<th></th>

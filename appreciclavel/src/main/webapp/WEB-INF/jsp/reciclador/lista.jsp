@@ -81,6 +81,7 @@
 								<th>Nome</th>
 								<th>Cpf</th>
 								<th>Emai</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -90,11 +91,13 @@
 									<td>${r.nome}</td>
 									<td>${r.cpf}</td>
 									<td>${r.email}</td>
+									<td><button class="btn btn-xs btn-default" title="Excluir">
+											<a href="/reciclador/${r.id}/excluir"><i
+												class="fa fa-times"></i></a>
+										</button></td>
 								</tr>
 							</c:forEach>
 							<tr>
-								<th></th>
-								<th></th>
 								<th></th>
 								<th></th>
 								<th></th>

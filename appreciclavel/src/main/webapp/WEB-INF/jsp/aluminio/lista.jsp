@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -64,7 +65,7 @@
 				</ul>
 			</nav>
 		</div>
-	</div>	
+	</div>
 	<div class="cart">
 		<div class="container">
 			<div class="row">
@@ -74,7 +75,7 @@
 					</h3>
 					<br />
 					<table class="table table-striped tcart">
-						<thead>						
+						<thead>
 							<tr>
 								<th>#</th>
 								<th>Codigo</th>
@@ -84,13 +85,14 @@
 								<th>Reutilizável</th>
 								<th>Peso</th>
 								<th>Valor</th>
+								<th></th>
 
 							</tr>
 						</thead>
-						<tbody>						
+						<tbody>
 							<c:forEach var="a" items="${listagem}">
 								<tr>
-									<td>${a.id}</td>								
+									<td>${a.id}</td>
 									<td>${a.codigo}</td>
 									<td>${a.marca}</td>
 									<td>${a.descricao}</td>
@@ -98,18 +100,24 @@
 									<td>${a.reutilizavel}</td>
 									<td>${a.peso}</td>
 									<td>${a.valor}</td>
+									<td><button class="btn btn-xs btn-default" title="Excluir">
+											<a href="/aluminio/${a.id}/excluir"><i
+												class="fa fa-times"></i></a>
+										</button></td>
+
 								</tr>
 							</c:forEach>
-						<tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Total</th>
-                    <th>todo</th>
-                  </tr>
-							
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th>Total</th>
+								<th>todo</th>
+							</tr>
+
 						</tbody>
 					</table>
 
