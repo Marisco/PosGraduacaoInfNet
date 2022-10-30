@@ -1,7 +1,8 @@
 package br.edu.infnet.appreciclavel.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.ui.Model;
 
 import org.springframework.stereotype.Controller;
@@ -11,18 +12,22 @@ import br.edu.infnet.appreciclavel.model.domain.Reciclavel;
 
 @Controller
 public class ReciclavelController {
-	private static List<Reciclavel> reciclaveis = new ArrayList<Reciclavel>();
+	private static Map<Integer, Reciclavel> mapa = new HashMap<Integer, Reciclavel>();
+	private static Integer id = 1;
 
 	public static void incluir(Reciclavel reciclavel) {
+		reciclavel.setId(id++);
+		mapa.put(reciclavel.getId(), reciclavel);
+	}
 
-		reciclaveis.add(reciclavel);
-
+	public static Collection<Reciclavel> obterLista() {
+		return mapa.values();
 	}
 
 	@GetMapping(value = "reciclavel/lista")
 	public String telaLista(Model model) {
 
-		model.addAttribute("listagem", reciclaveis);
+		model.addAttribute("listagem", obterLista());
 
 		return "reciclavel/lista";
 

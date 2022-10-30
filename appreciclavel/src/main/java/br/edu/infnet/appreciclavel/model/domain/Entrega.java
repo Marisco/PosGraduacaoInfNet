@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Entrega {
+	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private boolean web;
@@ -23,7 +24,15 @@ public class Entrega {
 
 	@Override
 	public String toString() {
-		return descricao + ";" + data + ";" + web + ";" + reciclador + ";" + reciclaveis.size();
+		return id + ";" + descricao + ";" + data + ";" + web + ";" + reciclador + ";" + reciclaveis.size();
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getDescricao() {

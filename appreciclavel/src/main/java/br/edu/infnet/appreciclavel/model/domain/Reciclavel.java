@@ -1,18 +1,27 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
 public abstract class Reciclavel {
-	
-	protected int codigo;	
+
+	protected int id;
+	protected int codigo;
 	protected boolean reutilizavel;
 	protected float peso;
 	protected float valor;
-	
+
 	@Override
 	public String toString() {
-		
-		return codigo+ "; " + reutilizavel + "; " + valor; 
+
+		return  id + ";" + codigo + "; " + reutilizavel + "; " + valor;
 	}
-	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -45,5 +54,4 @@ public abstract class Reciclavel {
 		this.valor = valor;
 	}
 
-	
 }

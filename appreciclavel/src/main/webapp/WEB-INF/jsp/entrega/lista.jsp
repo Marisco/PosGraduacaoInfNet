@@ -76,15 +76,18 @@
 					<br />
 					<c:forEach var="e" items="${listagem}">
 						<h3 class="title">
-							<i class="fa fa-check"></i> ${e.descricao} em  ${e.data} <span class="color"></span>							
+							<i class="fa fa-check"></i>${e.id} => ${e.descricao} em
+							${e.data} <span class="color"></span>
 						</h3>
-						<h3 class="title">							
-							<i class="fa fa-user"></i> ${e.reciclador.nome} <span class="color"></span>
+						<h3 class="title">
+							<i class="fa fa-user"></i> ${e.reciclador.nome} <span
+								class="color"></span>
 						</h3>
 						<table class="table table-striped tcart">
 							<thead>
 								<tr>
 									<th>#</th>
+									<th>Codigo</th>
 									<th>Descrição</th>
 									<th>Data</th>
 									<th>Web</th>
@@ -96,6 +99,7 @@
 							<tbody>
 								<c:forEach var="r" items="${e.reciclaveis}">
 									<tr>
+										<td>${r.id}</td>
 										<td>${r.codigo}</td>
 										<td>${r.marca}</td>
 										<td>${r.descricao}</td>

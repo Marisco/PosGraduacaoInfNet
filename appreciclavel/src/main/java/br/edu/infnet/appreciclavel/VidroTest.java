@@ -24,7 +24,7 @@ public class VidroTest implements ApplicationRunner {
 		v1.setTipo(TipoGarrafa.garrafa500);
 		v1.setMarca("DON SIMON");
 		v1.setDescricao("VINHO");
-		VidroController.incluit(v1);
+		VidroController.incluir(v1);
 		System.out.println("VIDRO: " + v1);
 
 		Vidro v2 = new Vidro();
@@ -35,7 +35,7 @@ public class VidroTest implements ApplicationRunner {
 		v2.setTipo(TipoGarrafa.garrafa600);
 		v2.setMarca("COCA-COLA");
 		v2.setDescricao("REFRIGERANTE");
-		VidroController.incluit(v2);
+		VidroController.incluir(v2);
 		System.out.println("Vidro: " + v2);
 
 		Vidro v3 = new Vidro();
@@ -46,7 +46,7 @@ public class VidroTest implements ApplicationRunner {
 		v3.setTipo(TipoGarrafa.garrafa1000);
 		v3.setMarca("GALO");
 		v3.setDescricao("AZEITE");
-		VidroController.incluit(v3);
+		VidroController.incluir(v3);
 		System.out.println("Vidro: " + v3);
 
 	}

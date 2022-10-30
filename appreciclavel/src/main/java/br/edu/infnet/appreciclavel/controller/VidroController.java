@@ -1,7 +1,8 @@
 package br.edu.infnet.appreciclavel.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,16 +13,22 @@ import br.edu.infnet.appreciclavel.model.domain.Vidro;
 @Controller
 public class VidroController {
 
-	private static List<Vidro> vidros = new ArrayList<Vidro>();
+	private static Map<Integer, Vidro> mapa = new HashMap<Integer, Vidro>();
+	private static Integer id = 1;
 
-	public static void incluit(Vidro vidro) {
-		vidros.add(vidro);
+	public static void incluir(Vidro vidro) {
+		vidro.setId(id++);
+		mapa.put(vidro.getId(), vidro);
+	}
+
+	public static Collection<Vidro> obterLista() {
+		return mapa.values();
 	}
 
 	@GetMapping(value = "vidro/lista")
 	public String telaLista(Model model) {
 
-		model.addAttribute("listagem", vidros);
+		model.addAttribute("listagem", obterLista());
 
 		return "vidro/lista";
 

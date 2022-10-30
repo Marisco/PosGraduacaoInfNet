@@ -77,6 +77,7 @@
 					<table class="table table-striped tcart">
 						<thead>
 							<tr>
+								<th>#</th>
 								<th>Nome</th>
 								<th>Cpf</th>
 								<th>Emai</th>
@@ -85,6 +86,7 @@
 						<tbody>
 							<c:forEach var="r" items="${listagem}">
 								<tr>
+									<td>${r.id}</td>
 									<td>${r.nome}</td>
 									<td>${r.cpf}</td>
 									<td>${r.email}</td>

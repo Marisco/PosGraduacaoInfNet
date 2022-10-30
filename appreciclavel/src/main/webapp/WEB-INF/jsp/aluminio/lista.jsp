@@ -77,6 +77,7 @@
 						<thead>						
 							<tr>
 								<th>#</th>
+								<th>Codigo</th>
 								<th>Marca</th>
 								<th>Descrição</th>
 								<th>Tipo</th>
@@ -88,7 +89,8 @@
 						</thead>
 						<tbody>						
 							<c:forEach var="a" items="${listagem}">
-								<tr>								
+								<tr>
+									<td>${a.id}</td>								
 									<td>${a.codigo}</td>
 									<td>${a.marca}</td>
 									<td>${a.descricao}</td>

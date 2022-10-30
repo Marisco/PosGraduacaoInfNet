@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -64,9 +65,9 @@
 				</ul>
 			</nav>
 		</div>
-	</div>	
+	</div>
 	<div class="cart">
-		<div class="container">			
+		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="title">
@@ -74,9 +75,10 @@
 					</h3>
 					<br />
 					<table class="table table-striped tcart">
-						<thead>						
+						<thead>
 							<tr>
 								<th>#</th>
+								<th>Código</th>
 								<th>Marca</th>
 								<th>Descrição</th>
 								<th>Tipo</th>
@@ -86,9 +88,10 @@
 
 							</tr>
 						</thead>
-						<tbody>						
+						<tbody>
 							<c:forEach var="v" items="${listagem}">
-								<tr>								
+								<tr>
+									<td>${v.id}</td>
 									<td>${v.codigo}</td>
 									<td>${v.marca}</td>
 									<td>${v.descricao}</td>
@@ -98,16 +101,16 @@
 									<td>${v.valor}</td>
 								</tr>
 							</c:forEach>
-						<tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>Total</th>
-                    <th>todo</th>
-                  </tr>
-							
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th>Total</th>
+								<th>todo</th>
+							</tr>
+
 						</tbody>
 					</table>
 

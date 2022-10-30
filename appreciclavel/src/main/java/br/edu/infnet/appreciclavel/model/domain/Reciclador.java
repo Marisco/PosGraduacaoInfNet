@@ -1,16 +1,25 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
 public class Reciclador {
+	protected Integer id;
 	protected String nome;
 	protected String cpf;
 	protected String email;
-	
+
 	@Override
 	public String toString() {
-		
-		return nome + "; " + cpf + "; " + email; 
+
+		return id + ";" + nome + "; " + cpf + "; " + email;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
