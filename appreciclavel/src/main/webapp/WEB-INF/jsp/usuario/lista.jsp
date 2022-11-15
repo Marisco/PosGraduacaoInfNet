@@ -11,55 +11,42 @@
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/blue.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/favicon/favicon.png">
-<title>Cadastro de Alumínios</title>
+<title>Listagem Usuarios</title>
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp" />	
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	<div class="cart">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="title">
-						<i class="fa fa-star"></i> Alumínios <span class="color"></span>
+						<i class="fa fa-star"></i> Usuarios <span class="color"></span>
 					</h3>
 					<br />
 					<table class="table table-striped tcart">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Codigo</th>
-								<th>Marca</th>
-								<th>Descrição</th>
-								<th>Tipo</th>
-								<th>Reutilizável</th>
-								<th>Peso</th>
-								<th>Valor</th>
+								<th>Nome</th>
+								<th>Senha</th>
+								<th>Emai</th>
 								<th></th>
-
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="a" items="${listagem}">
+							<c:forEach var="u" items="${listagem}">
 								<tr>
-									<td>${a.id}</td>
-									<td>${a.codigo}</td>
-									<td>${a.marca}</td>
-									<td>${a.descricao}</td>
-									<td>${a.tipo}</td>
-									<td>${a.reutilizavel}</td>
-									<td>${a.peso}</td>
-									<td>${a.valor}</td>
+									<td>${u.id}</td>
+									<td>${u.nome}</td>
+									<td>${u.senha}</td>
+									<td>${u.email}</td>
 									<td><button class="btn btn-xs btn-default" title="Excluir">
-											<a href="/aluminio/${a.id}/excluir"><i
+											<a href="/usuario/${u.id}/excluir"><i
 												class="fa fa-times"></i></a>
 										</button></td>
-
 								</tr>
 							</c:forEach>
 							<tr>
-								<th></th>
-								<th></th>
-								<th></th>
 								<th></th>
 								<th></th>
 								<th></th>
@@ -73,6 +60,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/respond.min.js"></script>

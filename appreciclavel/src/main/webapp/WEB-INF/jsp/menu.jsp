@@ -20,8 +20,9 @@
 				</form>
 				<div class="hlinks">
 					<span class="lr"><a href="#login" role="button"
-						data-toggle="modal">Logar</a> ou <a href="#register" role="button"
+						data-toggle="modal">Logar</a> ou <a href="/usuario" role="button"
 						data-toggle="modal">Registrar</a> </span>
+						<li><a href="/usuario">Registrar</a></li>
 				</div>
 			</div>
 		</div>
