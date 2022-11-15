@@ -1,31 +1,30 @@
 package br.edu.infnet.appreciclavel.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
+import br.edu.infnet.appreciclavel.model.repository.AluminioRepository;
 
 @Service
 public class AluminioService {
 	
-	private static Map<Integer, Aluminio> mapa = new HashMap<Integer, Aluminio>();
-	private static Integer id = 1;
+	@Autowired
+	private AluminioRepository aluminioRepository;	
 	
 	public void incluir(Aluminio aluminio) {
-		aluminio.setId(id++);
-		mapa.put(aluminio.getId(), aluminio);
+		aluminioRepository.save(aluminio);
 	}
 	 
 
 	public Collection<Aluminio> obterLista() {
-		return mapa.values();
+		return (Collection<Aluminio>) aluminioRepository.findAll();
 	}
 	
 	public void excluir(Integer id) {
-		mapa.remove(id);		
+		aluminioRepository.deleteById(id);		
 	}
 
 }

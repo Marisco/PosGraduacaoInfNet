@@ -1,30 +1,29 @@
 package br.edu.infnet.appreciclavel.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appreciclavel.model.domain.Reciclador;
+import br.edu.infnet.appreciclavel.model.repository.RecicladorRepository;
 
 @Service
 public class RecicladorService {
 	
-	private static Map<Integer, Reciclador> mapa = new HashMap<Integer, Reciclador>();
-	private static Integer id = 1;
+	@Autowired
+	private RecicladorRepository recicladorRepository;	
 
 	public void incluir(Reciclador reciclador) {
-		reciclador.setId(id++);
-		mapa.put(reciclador.getId(), reciclador);
+		recicladorRepository.save(reciclador);
 	}
 
 	public Collection<Reciclador> obterLista() {
-		return mapa.values();
+		return (Collection<Reciclador>) recicladorRepository.findAll();
 	}
 	
 	public void excluir(Integer id) {
-		mapa.remove(id);
+		recicladorRepository.deleteById(id); ;
 	}
 
 }

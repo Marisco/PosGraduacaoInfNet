@@ -1,5 +1,10 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tvidro")
 public class Vidro extends Reciclavel {
 	
 	protected TipoGarrafa tipo;

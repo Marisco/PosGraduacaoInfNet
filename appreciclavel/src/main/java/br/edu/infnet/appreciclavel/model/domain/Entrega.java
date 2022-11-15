@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Entrega {
+	
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;

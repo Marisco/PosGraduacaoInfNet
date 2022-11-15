@@ -1,7 +1,17 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "treciclavel")
 public abstract class Reciclavel {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
 	protected int codigo;
 	protected boolean reutilizavel;

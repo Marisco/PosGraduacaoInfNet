@@ -1,5 +1,10 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "taluminio")
 public class Aluminio extends Reciclavel {
 	
 	protected String marca;

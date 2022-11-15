@@ -1,6 +1,16 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "treciclador")
 public class Reciclador {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Integer id;
 	protected String nome;
 	protected String cpf;
