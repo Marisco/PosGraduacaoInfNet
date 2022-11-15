@@ -14,34 +14,34 @@
 <title>Cadastro de Alumínios</title>
 </head>
 <body>
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="logo">
-						<h1>
-							<a href="#">App<span class="color bold">Reciclável</span></a>
-						</h1>
-						<p class="meta">Reuse, Recicle ou Reduza!!!</p>
-					</div>
+	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="logo">
+					<h1>
+						<a href="#">App<span class="color bold">Reciclável</span></a>
+					</h1>
+					<p class="meta">Reuse, Recicle ou Reduza!!!</p>
 				</div>
-				<div class="col-md-4 col-md-offset-4">
-					<form role="form">
-						<div class="input-group">
-							<input class="form-control" id="search1"
-								placeholder="Digite aqui"> <span class="input-group-btn">
-								<button type="submit" class="btn btn-default">Pesquisar</button>
-							</span>
-						</div>
-					</form>
-					<div class="hlinks">
-						<span class="lr"><a href="#login" role="button"
-							data-toggle="modal">Logar</a> ou <a href="#register"
-							role="button" data-toggle="modal">Registrar</a> </span>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
+				<form role="form">
+					<div class="input-group">
+						<input class="form-control" id="search1" placeholder="Digite aqui">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">Pesquisar</button>
+						</span>
 					</div>
+				</form>
+				<div class="hlinks">
+					<span class="lr"><a href="#login" role="button"
+						data-toggle="modal">Logar</a> ou <a href="#register" role="button"
+						data-toggle="modal">Registrar</a> </span>
 				</div>
 			</div>
 		</div>
+	</div>
 	</header>
 	<div class="navbar bs-docs-nav" role="banner">
 		<div class="container">
@@ -120,12 +120,15 @@
 
 						</tbody>
 					</table>
-
-					<script src="../js/jquery.js"></script>
-					<script src="../js/bootstrap.min.js"></script>
-					<script src="../js/respond.min.js"></script>
-					<script src="../js/html5shiv.js"></script>
-					<script src="../js/custom.js"></script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<script src="../js/html5shiv.js"></script>
+	<script src="../js/custom.js"></script>
 </body>
 </html>
 

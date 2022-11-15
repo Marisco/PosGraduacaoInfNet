@@ -11,15 +11,16 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "taluminio")
+@Table(name = "tentrega")
 public class Entrega {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
-	private LocalDateTime data;
-	private boolean web;
+	private LocalDateTime data;	
+	private Boolean isWeb;
+	
 	@Transient
 	private Reciclador reciclador;
 	@Transient
@@ -28,7 +29,7 @@ public class Entrega {
 	public Entrega() {
 	
 		data = LocalDateTime.now();
-		web = true;
+		isWeb = true;
 	}
 	
 	public Entrega(Reciclador reciclador) {
@@ -38,7 +39,7 @@ public class Entrega {
 
 	@Override
 	public String toString() {
-		return id + ";" + descricao + ";" + data + ";" + web + ";" + reciclador + ";" + reciclaveis.size();
+		return id + ";" + descricao + ";" + data + ";" + isWeb + ";" + reciclador + ";" + reciclaveis.size();
 	}
 	
 	public Integer getId() {
@@ -66,11 +67,11 @@ public class Entrega {
 	}
 
 	public boolean isWeb() {
-		return web;
+		return isWeb;
 	}
 
-	public void setWeb(boolean web) {
-		this.web = web;
+	public void setWeb(boolean isWeb) {
+		this.isWeb = isWeb;
 	}
 
 	public List<Reciclavel> getReciclaveis() {
