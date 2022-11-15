@@ -3,11 +3,11 @@ package br.edu.infnet.appreciclavel;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appreciclavel.controller.EntregaController;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
 import br.edu.infnet.appreciclavel.model.domain.Entrega;
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
@@ -17,9 +17,13 @@ import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
+import br.edu.infnet.appreciclavel.model.service.EntregaService;
 
 @Component
 public class EntregaTest implements ApplicationRunner {
+	
+	@Autowired
+	private EntregaService entregaService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -69,14 +73,14 @@ public class EntregaTest implements ApplicationRunner {
 		e1.setWeb(true);
 		e1.setDescricao("PRIMEIRA ENTREGA");
 		e1.setReciclaveis(reciclaveisPrimeiraEntrega);
-		EntregaController.incluir(e1);
+		entregaService.incluir(e1);
 		System.out.println("=> " + e1);
 
 		Entrega e2 = new Entrega(r1);
 		e2.setWeb(false);
 		e2.setDescricao("SEGUNDA ENTREGA");
 		e2.setReciclaveis(reciclaveisPrimeiraEntrega);
-		EntregaController.incluir(e2);
+		entregaService.incluir(e2);
 		System.out.println("=> " + e2);
 
 		Reciclador r2 = new Reciclador();
@@ -87,7 +91,7 @@ public class EntregaTest implements ApplicationRunner {
 		Entrega e3 = new Entrega(r2);
 		e3.setDescricao("TERCEIRA ENTREGA");
 		e3.setReciclaveis(reciclaveisSegundaEntrega);
-		EntregaController.incluir(e3);
+		entregaService.incluir(e3);
 		System.out.println("=> " + e3);
 
 	}

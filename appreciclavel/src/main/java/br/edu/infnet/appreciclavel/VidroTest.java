@@ -1,15 +1,19 @@
 package br.edu.infnet.appreciclavel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appreciclavel.controller.VidroController;
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
+import br.edu.infnet.appreciclavel.model.service.VidroService;
 
 @Component
 public class VidroTest implements ApplicationRunner {
+	
+	@Autowired
+	VidroService vidroService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +28,7 @@ public class VidroTest implements ApplicationRunner {
 		v1.setTipo(TipoGarrafa.garrafa500);
 		v1.setMarca("DON SIMON");
 		v1.setDescricao("VINHO");
-		VidroController.incluir(v1);
+		vidroService.incluir(v1);
 		System.out.println("VIDRO: " + v1);
 
 		Vidro v2 = new Vidro();
@@ -35,7 +39,7 @@ public class VidroTest implements ApplicationRunner {
 		v2.setTipo(TipoGarrafa.garrafa600);
 		v2.setMarca("COCA-COLA");
 		v2.setDescricao("REFRIGERANTE");
-		VidroController.incluir(v2);
+		vidroService.incluir(v2);
 		System.out.println("Vidro: " + v2);
 
 		Vidro v3 = new Vidro();
@@ -46,7 +50,7 @@ public class VidroTest implements ApplicationRunner {
 		v3.setTipo(TipoGarrafa.garrafa1000);
 		v3.setMarca("GALO");
 		v3.setDescricao("AZEITE");
-		VidroController.incluir(v3);
+		vidroService.incluir(v3);
 		System.out.println("Vidro: " + v3);
 
 	}

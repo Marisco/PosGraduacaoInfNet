@@ -1,20 +1,23 @@
 package br.edu.infnet.appreciclavel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appreciclavel.controller.ReciclavelController;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
+import br.edu.infnet.appreciclavel.model.service.ReciclavelService;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 
 @Component
 public class ReciclavelTest implements ApplicationRunner {
 
+	@Autowired
+	ReciclavelService reciclavelService;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
@@ -28,7 +31,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		a1.setReutilizavel(false);
 		a1.setPeso((float) 0.11);
 		a1.setValor((float) 0.05);
-		ReciclavelController.incluir(a1);
+		reciclavelService.incluir(a1);
 		System.out.println("Reciclável de Alumínio: " + a1);
 
 		Vidro v1 = new Vidro();
@@ -39,7 +42,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		v1.setReutilizavel(true);
 		v1.setPeso((float) 0.35);
 		v1.setValor((float) 0.03);
-		ReciclavelController.incluir(v1);
+		reciclavelService.incluir(v1);
 		System.out.println("Reciclável de Vidro: " + v1);
 
 		Plastico p1 = new Plastico();
@@ -50,7 +53,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		p1.setReutilizavel(false);
 		p1.setPeso((float) 0.03);
 		p1.setValor((float) 0.01);
-		ReciclavelController.incluir(p1);
+		reciclavelService.incluir(p1);
 		System.out.println("Reciclável de Plástico: " + p1);
 
 	}

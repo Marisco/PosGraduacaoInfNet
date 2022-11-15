@@ -1,16 +1,21 @@
 package br.edu.infnet.appreciclavel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appreciclavel.controller.AluminioController;
+
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
+import br.edu.infnet.appreciclavel.model.service.AluminioService;
 
 @Component
 public class AluminioTest implements ApplicationRunner {
 
+	@Autowired
+	private AluminioService aluminioService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
@@ -24,7 +29,7 @@ public class AluminioTest implements ApplicationRunner {
 		a1.setTipo(TipoAluminio.lata473);
 		a1.setMarca("HEINEKEN");
 		a1.setDescricao("CERVEJA");
-		AluminioController.incluir(a1);
+		aluminioService.incluir(a1);
 		System.out.println("Aluminio: " + a1);
 
 		Aluminio a2 = new Aluminio();
@@ -35,7 +40,7 @@ public class AluminioTest implements ApplicationRunner {
 		a2.setTipo(TipoAluminio.Lata250);
 		a2.setMarca("COCA-COLA");
 		a2.setDescricao("REFRIGERANTE");
-		AluminioController.incluir(a2);
+		aluminioService.incluir(a2);
 		System.out.println("Aluminio: " + a2);
 
 		Aluminio a3 = new Aluminio();
@@ -46,7 +51,7 @@ public class AluminioTest implements ApplicationRunner {
 		a3.setTipo(TipoAluminio.lata500);
 		a3.setMarca("RED BULL");
 		a3.setDescricao("ENERGÉTICO");
-		AluminioController.incluir(a3);
+		aluminioService.incluir(a3);
 		System.out.println("Aluminio: " + a3);
 
 	}

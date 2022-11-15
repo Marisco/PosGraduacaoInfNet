@@ -1,15 +1,19 @@
 package br.edu.infnet.appreciclavel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appreciclavel.controller.PlasticoController;
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
+import br.edu.infnet.appreciclavel.model.service.PlasticoService;
 
 @Component
 public class PlasticoTest implements ApplicationRunner {
+	
+	@Autowired
+	private PlasticoService platicoService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +28,7 @@ public class PlasticoTest implements ApplicationRunner {
 		p1.setTipo(TipoPlastico.pet1000);
 		p1.setMarca("CAMPO LARGO");
 		p1.setDescricao("VINHO");
-		PlasticoController.incluir(p1);
+		platicoService.incluir(p1);
 		System.out.println("Plastico: " + p1);
 
 		Plastico p2 = new Plastico();
@@ -35,7 +39,7 @@ public class PlasticoTest implements ApplicationRunner {
 		p2.setTipo(TipoPlastico.pet600);
 		p2.setMarca("COCA-COLA");
 		p2.setDescricao("REFRIGERANTE");
-		PlasticoController.incluir(p2);
+		platicoService.incluir(p2);
 		System.out.println("Plastico: " + p2);
 
 		Plastico p3 = new Plastico();
@@ -46,7 +50,7 @@ public class PlasticoTest implements ApplicationRunner {
 		p3.setTipo(TipoPlastico.pvc);
 		p3.setMarca("TIGRE");
 		p3.setDescricao("TUBO 10");
-		PlasticoController.incluir(p3);
+		platicoService.incluir(p3);
 		System.out.println("Plastico: " + p3);
 
 	}
