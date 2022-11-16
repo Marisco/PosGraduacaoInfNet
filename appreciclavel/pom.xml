@@ -11,7 +11,7 @@
 	<artifactId>appreciclavel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>appreciclavel</name>
-	<description>Projeto cpara controle de material reciclavel</description>
+	<description>Projeto para controle de material reciclavel</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -25,5 +25,17 @@ public class UsuarioService {
 	public void excluir(Integer id) {
 		usuarioRepository.deleteById(id); ;
 	}
+	
+	public Usuario validar(String email, String senha) {
+		
+		
+		Usuario usuario =  usuarioRepository.findByEmail(email);
+		
+		if(usuario != null && senha.equals(usuario.getSenha())) {
+			return usuario;
+		}
+		
+		return null;
+	}
 
 }

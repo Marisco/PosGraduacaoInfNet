@@ -19,10 +19,10 @@
 					</div>
 				</form>
 				<div class="hlinks">
-					<span class="lr"><a href="#login" role="button"
-						data-toggle="modal">Logar</a> ou <a href="/usuario/cadastro" role="button"
-						data-toggle="modal">Registrar</a> </span>
-					<li><a href="/usuario">Registrar</a></li>
+					<span class="lr">
+					  <a href="/login" role="button">Login</a> ou <a href="/login" role="button">Logout ${user.nome}</a>
+					  <a href="/usuario/cadastro" role="button">Registrar</a> 
+					 </span>
 				</div>
 			</div>
 		</div>
