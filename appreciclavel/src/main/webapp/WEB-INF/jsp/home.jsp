@@ -15,7 +15,6 @@
 </head>
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
-
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>

@@ -8,7 +8,7 @@ public class AppController {
 	
 	@GetMapping
 	public String telaHome() {
-	return "home";
+	return "/home";
 	}
 
 }

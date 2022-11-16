@@ -7,9 +7,9 @@ import javax.persistence.Table;
 @Table(name = "tplastico")
 public class Plastico extends Reciclavel {
 	
-	protected TipoPlastico tipo;
 	protected String marca;
-	protected String descricao;		
+	protected String descricao;
+	protected TipoPlastico tipo;
 	
 	public enum TipoPlastico {filme, Tetra , pvc, pet500, pet600, pet1000, pet1500, pet2000, pet2500,  pet5000};
 	

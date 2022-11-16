@@ -35,7 +35,7 @@ public class UsuarioController {
 	public String incluir(Usuario usuario) {
 
 		usuarioService.incluir(usuario);
-		return "usuario/lista";
+		return "redirect:/usuario/lista";
 
 	}
 	
