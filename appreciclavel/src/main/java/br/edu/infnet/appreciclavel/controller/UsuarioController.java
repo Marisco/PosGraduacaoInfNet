@@ -47,7 +47,7 @@ public class UsuarioController {
 
 	}
 	
-	@PostMapping(value = "/cep")
+	@PostMapping(value = "cep")
 	public String buscarCep(Model model, @RequestParam String cep) {
 
 		model.addAttribute("endereco", usuarioService.buscarCep(cep));
