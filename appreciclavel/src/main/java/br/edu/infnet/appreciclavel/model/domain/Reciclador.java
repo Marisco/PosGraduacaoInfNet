@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +17,10 @@ public class Reciclador {
 	protected String nome;
 	protected String cpf;
 	protected String email;
+	
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
 
 	@Override
 	public String toString() {
@@ -53,4 +59,12 @@ public class Reciclador {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

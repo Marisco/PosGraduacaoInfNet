@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appreciclavel.model.domain.Reciclador;
+import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.service.RecicladorService;
 
 @Controller
@@ -32,8 +34,9 @@ public class RecicladorController {
 	}
 	
 	@PostMapping(value = "reciclador/incluir")
-	public String incluir(Reciclador reciclador) {
-
+	public String incluir(Reciclador reciclador, @SessionAttribute("user") Usuario usuario) {
+		
+		reciclador.setUsuario(usuario);
 		recicladorService.incluir(reciclador);
 		return "redirect:/reciclador/lista";
 

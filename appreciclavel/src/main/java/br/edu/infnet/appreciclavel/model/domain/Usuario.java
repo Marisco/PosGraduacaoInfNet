@@ -1,9 +1,13 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +19,10 @@ public class Usuario {
 	protected String nome;	
 	protected String email;
 	protected String senha;
+	
+	@OneToMany
+	@JoinColumn(name ="idUsuario")
+	private List<Reciclador> Recicladores;
 
 	@Override
 	public String toString() {
@@ -53,4 +61,13 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public List<Reciclador> getRecicladores() {
+		return Recicladores;
+	}
+
+	public void setRecicladores(List<Reciclador> recicladores) {
+		Recicladores = recicladores;
+	}
+	
 }
