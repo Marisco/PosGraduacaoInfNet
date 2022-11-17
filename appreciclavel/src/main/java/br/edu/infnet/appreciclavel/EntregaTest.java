@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
@@ -13,12 +14,13 @@ import br.edu.infnet.appreciclavel.model.domain.Entrega;
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
 import br.edu.infnet.appreciclavel.model.domain.Reciclador;
 import br.edu.infnet.appreciclavel.model.domain.Reciclavel;
+import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
 import br.edu.infnet.appreciclavel.model.service.EntregaService;
-
+@Order(7)
 @Component
 public class EntregaTest implements ApplicationRunner {
 	
@@ -28,7 +30,8 @@ public class EntregaTest implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
-		System.out.println("--------Cadastro de Entregas--------");
+		System.out.println("--------Cadastro de Entregas--------");	
+		
 
 		Aluminio aluminio = new Aluminio();
 		aluminio.setTipo(TipoAluminio.lata473);
@@ -63,16 +66,21 @@ public class EntregaTest implements ApplicationRunner {
 
 		List<Reciclavel> reciclaveisSegundaEntrega = new ArrayList<Reciclavel>();
 		reciclaveisSegundaEntrega.add(aluminio);
+		
+		Usuario u1= new Usuario();
+		u1.setId(1);
+		
 
 		Reciclador r1 = new Reciclador();
-		r1.setNome("MARIA SILVA");
-		r1.setCpf("111.111.111-01");
-		r1.setEmail("MARIA@GMAIL.COM");
+		r1.setId(1);				
+		r1.setUsuario(u1);
+		
 
 		Entrega e1 = new Entrega(r1);
 		e1.setWeb(true);
 		e1.setDescricao("PRIMEIRA ENTREGA");
 		e1.setReciclaveis(reciclaveisPrimeiraEntrega);
+		
 		entregaService.incluir(e1);
 		System.out.println("=> " + e1);
 
@@ -83,10 +91,12 @@ public class EntregaTest implements ApplicationRunner {
 		entregaService.incluir(e2);
 		System.out.println("=> " + e2);
 
+		Usuario u2= new Usuario();
+		u2.setId(2);
+		
 		Reciclador r2 = new Reciclador();
-		r2.setNome("JOÃO SILVA");
-		r2.setCpf("222.222.222-02");
-		r2.setEmail("JOÃO@GMAIL.COM");
+		r2.setId(2);		
+		r2.setUsuario(u2);
 
 		Entrega e3 = new Entrega(r2);
 		e3.setDescricao("TERCEIRA ENTREGA");

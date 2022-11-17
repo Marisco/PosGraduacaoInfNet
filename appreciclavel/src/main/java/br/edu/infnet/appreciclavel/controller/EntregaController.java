@@ -23,9 +23,8 @@ public class EntregaController {
 
 	@GetMapping(value = "entrega/lista")
 	public String telaLista(Model model) {
-
+		
 		model.addAttribute("listagem", entregaService.obterLista());
-
 		return "entrega/lista";
 
 	}

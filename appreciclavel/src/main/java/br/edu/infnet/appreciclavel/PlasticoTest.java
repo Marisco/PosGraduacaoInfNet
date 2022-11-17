@@ -3,12 +3,14 @@ package br.edu.infnet.appreciclavel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 import br.edu.infnet.appreciclavel.model.service.PlasticoService;
 
+@Order(4)
 @Component
 public class PlasticoTest implements ApplicationRunner {
 	

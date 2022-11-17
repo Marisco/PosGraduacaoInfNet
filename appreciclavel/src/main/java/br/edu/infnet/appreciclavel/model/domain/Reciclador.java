@@ -20,7 +20,7 @@ public class Reciclador {
 	
 	@ManyToOne
 	@JoinColumn(name="idUsuario")
-	private Usuario usuario;
+	private Usuario usuario;	
 
 	@Override
 	public String toString() {

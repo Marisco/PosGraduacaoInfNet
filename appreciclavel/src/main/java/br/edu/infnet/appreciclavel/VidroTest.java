@@ -3,12 +3,14 @@ package br.edu.infnet.appreciclavel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
 import br.edu.infnet.appreciclavel.model.service.VidroService;
 
+@Order(5)
 @Component
 public class VidroTest implements ApplicationRunner {
 	

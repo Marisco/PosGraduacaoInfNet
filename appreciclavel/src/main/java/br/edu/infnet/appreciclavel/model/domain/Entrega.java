@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -19,10 +21,12 @@ public class Entrega {
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;	
-	private Boolean isWeb;
+	private Boolean isWeb;	
 	
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="idReciclador")
 	private Reciclador reciclador;
+	
 	@Transient
 	private List<Reciclavel> reciclaveis;
 

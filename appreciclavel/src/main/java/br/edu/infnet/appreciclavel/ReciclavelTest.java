@@ -3,6 +3,7 @@ package br.edu.infnet.appreciclavel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
@@ -13,6 +14,7 @@ import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
 import br.edu.infnet.appreciclavel.model.service.ReciclavelService;
 import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
 
+@Order(6)
 @Component
 public class ReciclavelTest implements ApplicationRunner {
 

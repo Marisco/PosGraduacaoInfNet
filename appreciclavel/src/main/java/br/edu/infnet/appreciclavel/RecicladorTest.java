@@ -3,13 +3,14 @@ package br.edu.infnet.appreciclavel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Reciclador;
 import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.service.RecicladorService;
 
-
+@Order(2)
 @Component
 public class RecicladorTest implements ApplicationRunner {
 	
