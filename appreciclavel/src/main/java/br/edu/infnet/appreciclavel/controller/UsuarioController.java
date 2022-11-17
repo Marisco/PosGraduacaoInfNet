@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.service.UsuarioService;
@@ -41,6 +42,15 @@ public class UsuarioController {
 	
 	@GetMapping(value = "usuario/cadastro")
 	public String telaCadastro() {
+		
+		return "usuario/cadastro";
+
+	}
+	
+	@PostMapping(value = "/cep")
+	public String buscarCep(Model model, @RequestParam String cep) {
+
+		model.addAttribute("endereco", usuarioService.buscarCep(cep));
 		
 		return "usuario/cadastro";
 

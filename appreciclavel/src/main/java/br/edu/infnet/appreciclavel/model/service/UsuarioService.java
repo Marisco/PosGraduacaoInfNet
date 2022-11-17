@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.appreciclavel.model.domain.Endereco;
 import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.repository.UsuarioRepository;
 
@@ -37,5 +38,14 @@ public class UsuarioService {
 		
 		return null;
 	}
+	
+	public Endereco buscarCep(String cep) {
+		
+		Endereco  endereco = new Endereco();
+		endereco.setCep("29.167-830");		
+		return endereco;
+		
+	}
+	
 
 }
