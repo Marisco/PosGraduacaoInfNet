@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.appreciclavel.clients.IEnderecoClient;
 import br.edu.infnet.appreciclavel.model.domain.Endereco;
 import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.repository.UsuarioRepository;
@@ -13,7 +14,9 @@ import br.edu.infnet.appreciclavel.model.repository.UsuarioRepository;
 public class UsuarioService {
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;	
+	private UsuarioRepository usuarioRepository;
+	@Autowired
+	private IEnderecoClient enderecoClient;
 
 	public void incluir(Usuario usuario) {
 		usuarioRepository.save(usuario);
@@ -39,12 +42,8 @@ public class UsuarioService {
 		return null;
 	}
 	
-	public Endereco buscarCep(String cep) {
-		
-		Endereco  endereco = new Endereco();
-		endereco.setCep("29.167-830");		
-		return endereco;
-		
+	public Endereco buscarCep(String cep) {		
+		return enderecoClient.buscarCep(cep);
 	}
 	
 
