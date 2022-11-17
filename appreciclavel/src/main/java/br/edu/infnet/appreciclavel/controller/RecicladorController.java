@@ -26,9 +26,9 @@ public class RecicladorController {
 	}
 
 	@GetMapping(value = "reciclador/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
-		model.addAttribute("listagem", recicladorService.obterLista());
+		model.addAttribute("listagem", recicladorService.obterLista(usuario));
 		return "reciclador/lista";
 
 	}
