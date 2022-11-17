@@ -42,6 +42,9 @@
 								<input type="password" class="form-control" name="senha">
 							</div>
 						</div>
+						
+						<c:import url="/WEB-INF/jsp/endereco.jsp"/>
+						
 						<div class="form-group">
 							<div class="col-md-9 col-md-offset-3">
 								<button type="submit" class="btn btn-default">Registrar</button>

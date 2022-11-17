@@ -2,12 +2,14 @@ package br.edu.infnet.appreciclavel.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,10 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name ="idUsuario")
 	private List<Reciclador> Recicladores;
+	
+	@OneToOne(cascade = CascadeType.PERSIST )
+	@JoinColumn(name ="idEndereco")		
+	private Endereco Endereco;	
 
 	@Override
 	public String toString() {
@@ -68,6 +74,14 @@ public class Usuario {
 
 	public void setRecicladores(List<Reciclador> recicladores) {
 		Recicladores = recicladores;
+	}
+	
+	public Endereco getEndereco() {
+		return Endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		Endereco = endereco;
 	}
 	
 }
