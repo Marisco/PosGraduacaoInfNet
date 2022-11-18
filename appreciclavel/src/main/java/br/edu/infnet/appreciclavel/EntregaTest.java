@@ -16,10 +16,8 @@ import br.edu.infnet.appreciclavel.model.domain.Reciclador;
 import br.edu.infnet.appreciclavel.model.domain.Reciclavel;
 import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
-import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
-import br.edu.infnet.appreciclavel.model.domain.Plastico.TipoPlastico;
-import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
 import br.edu.infnet.appreciclavel.model.service.EntregaService;
+
 @Order(7)
 @Component
 public class EntregaTest implements ApplicationRunner {
@@ -32,50 +30,47 @@ public class EntregaTest implements ApplicationRunner {
 
 		System.out.println("--------Cadastro de Entregas--------");	
 		
+		Usuario u1= new Usuario();
+		u1.setId(1);
+		
+		Usuario u2= new Usuario();
+		u2.setId(2);
+		
+		Reciclador r1 = new Reciclador();
+		r1.setId(1);		
+		r1.setUsuario(u1);
+		
+		Reciclador r2 = new Reciclador();
+		r2.setId(2);		
+		r2.setUsuario(u2);
 
 		Aluminio aluminio = new Aluminio();
-		aluminio.setTipo(TipoAluminio.lata473);
-		aluminio.setMarca("HEINEKEN");
-		aluminio.setDescricao("CERVEJA");
-		aluminio.setCodigo(1);
-		aluminio.setReutilizavel(false);
-		aluminio.setPeso((float) 0.11);
-		aluminio.setValor((float) 0.05);
+		aluminio.setId(1);			
+		aluminio.setUsuario(u1);		
 
 		Vidro vidro = new Vidro();
-		vidro.setTipo(TipoGarrafa.garrafa500);
-		vidro.setMarca("DON SIMON");
-		vidro.setDescricao("VINHO");
-		vidro.setCodigo(2);
-		vidro.setReutilizavel(true);
-		vidro.setPeso((float) 0.35);
-		vidro.setValor((float) 0.03);
+		vidro.setId(2);
+		vidro.setUsuario(u1);
 
 		Plastico plastico = new Plastico();
-		plastico.setTipo(TipoPlastico.pet1000);
-		plastico.setMarca("CAMPO LARGO");
-		plastico.setDescricao("VINHO");
-		plastico.setCodigo(3);
-		plastico.setReutilizavel(false);
-		plastico.setPeso((float) 0.03);
-		plastico.setValor((float) 0.01);
+		plastico.setId(3);
+		plastico.setUsuario(u2);		
 
-		List<Reciclavel> reciclaveisPrimeiraEntrega = new ArrayList<Reciclavel>();
+		List<Reciclavel> reciclaveisPrimeiraEntrega = new ArrayList<Reciclavel>();		
+		
 		reciclaveisPrimeiraEntrega.add(plastico);
-		reciclaveisPrimeiraEntrega.add(vidro);
+		reciclaveisPrimeiraEntrega.add(vidro);		
 
 		List<Reciclavel> reciclaveisSegundaEntrega = new ArrayList<Reciclavel>();
 		reciclaveisSegundaEntrega.add(aluminio);
-		
-		Usuario u1= new Usuario();
-		u1.setId(1);
 		
 
 		Entrega e1 = new Entrega();
 		e1.setWeb(true);
 		e1.setDescricao("PRIMEIRA ENTREGA");
 		e1.setReciclaveis(reciclaveisPrimeiraEntrega);
-		
+		e1.setReciclador(r1);	
+		e1.setUsuario(u1);		
 		entregaService.incluir(e1);
 		System.out.println("=> " + e1);
 
@@ -83,19 +78,20 @@ public class EntregaTest implements ApplicationRunner {
 		e2.setWeb(false);
 		e2.setDescricao("SEGUNDA ENTREGA");
 		e2.setReciclaveis(reciclaveisPrimeiraEntrega);
+		e2.setReciclador(r1);
+		e2.setUsuario(u1);		
 		entregaService.incluir(e2);
 		System.out.println("=> " + e2);
 
-		Usuario u2= new Usuario();
-		u2.setId(2);
 		
-		Reciclador r2 = new Reciclador();
-		r2.setId(2);		
-		r2.setUsuario(u2);
+		
+		
 
 		Entrega e3 = new Entrega();
 		e3.setDescricao("TERCEIRA ENTREGA");
 		e3.setReciclaveis(reciclaveisSegundaEntrega);
+		e3.setReciclador(r2);
+		e1.setUsuario(u2);
 		entregaService.incluir(e3);
 		System.out.println("=> " + e3);
 

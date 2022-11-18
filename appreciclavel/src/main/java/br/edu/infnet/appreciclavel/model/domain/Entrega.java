@@ -91,5 +91,13 @@ public class Entrega {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public Reciclador getReciclador() {
+		return reciclador;
+	}
+
+	public void setReciclador(Reciclador reciclador) {
+		this.reciclador = reciclador;
+	}
 	
 }

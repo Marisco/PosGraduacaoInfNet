@@ -24,7 +24,7 @@ public class UsuarioTest implements ApplicationRunner {
 		Usuario u1 = new Usuario();
 		u1.setNome("MARIA SILVA");
 		u1.setSenha("123456");
-		u1.setEmail("MARIA@GMAIL.COM");	
+		u1.setEmail("MARIA@GMAIL.COM");		
 		usuarioService.incluir(u1);
 		System.out.println("Reciclador: " + u1);
 		

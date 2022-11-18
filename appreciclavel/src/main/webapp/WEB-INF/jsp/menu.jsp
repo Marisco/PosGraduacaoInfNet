@@ -46,9 +46,14 @@
 			role="navigation">
 			<ul class="nav navbar-nav">
 				<li><a href="/">home</a></li>
-				<c:if test="${not empty user}">
-					<li><a href="/entrega/lista">Entregas</a></li>
+				<c:if test="${not empty user}">					
 					<li><a href="/reciclavel/lista">Recicláveis</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Entregas <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/entrega/cadastro">Cadastro</a></li>
+							<li><a href="/entrega/lista">lista</a></li>
+						</ul></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Recicladores <b class="caret"></b></a>
 						<ul class="dropdown-menu">

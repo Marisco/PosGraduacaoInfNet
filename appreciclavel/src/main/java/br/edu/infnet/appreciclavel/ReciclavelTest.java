@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appreciclavel.model.domain.Aluminio;
 import br.edu.infnet.appreciclavel.model.domain.Plastico;
+import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.domain.Vidro;
 import br.edu.infnet.appreciclavel.model.domain.Aluminio.TipoAluminio;
 import br.edu.infnet.appreciclavel.model.domain.Vidro.TipoGarrafa;
@@ -24,6 +25,9 @@ public class ReciclavelTest implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		System.out.println("--------Cadastro de Recicláveis--------");
+		
+		Usuario u1 = new Usuario();
+		u1.setId(1);
 
 		Aluminio a1 = new Aluminio();
 		a1.setTipo(TipoAluminio.lata473);
@@ -33,6 +37,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		a1.setReutilizavel(false);
 		a1.setPeso((float) 0.11);
 		a1.setValor((float) 0.05);
+		a1.setUsuario(u1);
 		reciclavelService.incluir(a1);
 		System.out.println("Reciclável de Alumínio: " + a1);
 
@@ -44,6 +49,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		v1.setReutilizavel(true);
 		v1.setPeso((float) 0.35);
 		v1.setValor((float) 0.03);
+		v1.setUsuario(u1);
 		reciclavelService.incluir(v1);
 		System.out.println("Reciclável de Vidro: " + v1);
 
@@ -55,6 +61,7 @@ public class ReciclavelTest implements ApplicationRunner {
 		p1.setReutilizavel(false);
 		p1.setPeso((float) 0.03);
 		p1.setValor((float) 0.01);
+		p1.setUsuario(u1);
 		reciclavelService.incluir(p1);
 		System.out.println("Reciclável de Plástico: " + p1);
 
