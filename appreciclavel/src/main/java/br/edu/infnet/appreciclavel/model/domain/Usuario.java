@@ -22,9 +22,19 @@ public class Usuario {
 	protected String email;
 	protected String senha;
 	
+	
 	@OneToMany
 	@JoinColumn(name ="idUsuario")
-	private List<Reciclador> Recicladores;
+	private List<Reciclador> recicladores;
+	
+	@OneToMany
+	@JoinColumn(name ="idUsuario")
+	private List<Reciclavel> reciclaveis;
+	
+	@OneToMany
+	@JoinColumn(name ="idUsuario")
+	private List<Entrega> entrega;
+	
 	
 	@OneToOne(cascade = CascadeType.PERSIST )
 	@JoinColumn(name ="idEndereco")		
@@ -69,13 +79,29 @@ public class Usuario {
 	}
 
 	public List<Reciclador> getRecicladores() {
-		return Recicladores;
+		return recicladores;
 	}
 
 	public void setRecicladores(List<Reciclador> recicladores) {
-		Recicladores = recicladores;
+		this.recicladores = recicladores;
 	}
 	
+	public List<Reciclavel> getReciclaveis() {
+		return reciclaveis;
+	}
+
+	public void setReciclaveis(List<Reciclavel> reciclaveis) {
+		this.reciclaveis = reciclaveis;
+	}
+
+	public List<Entrega> getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(List<Entrega> entrega) {
+		this.entrega = entrega;
+	}
+
 	public Endereco getEndereco() {
 		return Endereco;
 	}
@@ -83,5 +109,6 @@ public class Usuario {
 	public void setEndereco(Endereco endereco) {
 		Endereco = endereco;
 	}
+	
 	
 }

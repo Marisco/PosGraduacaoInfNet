@@ -1,11 +1,16 @@
 package br.edu.infnet.appreciclavel.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +25,14 @@ public abstract class Reciclavel {
 	protected boolean reutilizavel;
 	protected float peso;
 	protected float valor;
+	
+	@ManyToMany(mappedBy = "reciclaveis")
+	private List<Entrega> entregas;
+	
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
+	
 
 	@Override
 	public String toString() {
@@ -65,6 +78,14 @@ public abstract class Reciclavel {
 
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

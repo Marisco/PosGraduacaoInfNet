@@ -3,14 +3,16 @@ package br.edu.infnet.appreciclavel.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "tentrega")
@@ -21,29 +23,29 @@ public class Entrega {
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;	
-	private Boolean isWeb;	
+	private Boolean isWeb;
 	
-	@ManyToOne
+	@OneToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name="idReciclador")
 	private Reciclador reciclador;
 	
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
+	
+	@ManyToMany(cascade = CascadeType.DETACH)
+	@JoinColumn
 	private List<Reciclavel> reciclaveis;
 
 	public Entrega() {
 	
 		data = LocalDateTime.now();
 		isWeb = true;
-	}
+	}	
 	
-	public Entrega(Reciclador reciclador) {
-		this();
-		this.reciclador = reciclador;		
-	}
-
 	@Override
 	public String toString() {
-		return id + ";" + descricao + ";" + data + ";" + isWeb + ";" + reciclador + ";" + reciclaveis.size();
+		return id + ";" + descricao + ";" + data + ";" + isWeb + ";" + usuario + ";" + reciclaveis.size();
 	}
 	
 	public Integer getId() {
@@ -60,11 +62,7 @@ public class Entrega {
 	
 	public LocalDateTime getData() {
 		return data;
-	}
-	
-	public Reciclador getReciclador() {
-		return reciclador;
-	}
+	}	
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
@@ -84,6 +82,14 @@ public class Entrega {
 
 	public void setReciclaveis(List<Reciclavel> reciclaveis) {
 		this.reciclaveis = reciclaveis;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }

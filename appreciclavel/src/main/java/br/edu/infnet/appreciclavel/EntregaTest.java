@@ -71,12 +71,7 @@ public class EntregaTest implements ApplicationRunner {
 		u1.setId(1);
 		
 
-		Reciclador r1 = new Reciclador();
-		r1.setId(1);				
-		r1.setUsuario(u1);
-		
-
-		Entrega e1 = new Entrega(r1);
+		Entrega e1 = new Entrega();
 		e1.setWeb(true);
 		e1.setDescricao("PRIMEIRA ENTREGA");
 		e1.setReciclaveis(reciclaveisPrimeiraEntrega);
@@ -84,7 +79,7 @@ public class EntregaTest implements ApplicationRunner {
 		entregaService.incluir(e1);
 		System.out.println("=> " + e1);
 
-		Entrega e2 = new Entrega(r1);
+		Entrega e2 = new Entrega();
 		e2.setWeb(false);
 		e2.setDescricao("SEGUNDA ENTREGA");
 		e2.setReciclaveis(reciclaveisPrimeiraEntrega);
@@ -98,7 +93,7 @@ public class EntregaTest implements ApplicationRunner {
 		r2.setId(2);		
 		r2.setUsuario(u2);
 
-		Entrega e3 = new Entrega(r2);
+		Entrega e3 = new Entrega();
 		e3.setDescricao("TERCEIRA ENTREGA");
 		e3.setReciclaveis(reciclaveisSegundaEntrega);
 		entregaService.incluir(e3);

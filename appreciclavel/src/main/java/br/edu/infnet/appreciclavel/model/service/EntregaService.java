@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appreciclavel.model.domain.Entrega;
+import br.edu.infnet.appreciclavel.model.domain.Usuario;
 import br.edu.infnet.appreciclavel.model.repository.EntregaRepository;
 
 @Service
@@ -21,6 +22,10 @@ public class EntregaService {
 
 	public Collection<Entrega> obterLista() {
 		return (Collection<Entrega>) entregaRepository.findAll();
+	}
+
+	public Collection<Entrega> obterLista(Usuario ususario) {
+		return (Collection<Entrega>) entregaRepository.obterLista(ususario.getId());
 	}
 
 	public void excluir(Integer id) {

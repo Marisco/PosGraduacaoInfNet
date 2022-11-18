@@ -11,7 +11,7 @@ import br.edu.infnet.appreciclavel.model.domain.Reciclador;
 @Repository
 public interface RecicladorRepository extends CrudRepository<Reciclador, Integer> {
 	
-	@Query("from Reciclador s where s.usuario.id = :userid")
+	@Query("from Reciclador r where r.usuario.id = :userid")
 	List<Reciclador> obterLista(Integer userid);	
 
 }
