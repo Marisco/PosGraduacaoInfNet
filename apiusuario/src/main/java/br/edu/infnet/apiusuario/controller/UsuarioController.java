@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.infnet.apiusuario.model.domain.Usuario;
-
+import br.edu.infnet.apiusuario.model.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/usuario")
@@ -24,23 +24,23 @@ public class UsuarioController {
 
 	@PostMapping(value = "/incluir")
 	public void incluir(@RequestBody Usuario usuario) {
-		
+		usuarioService.incluir(usuario);
 	}
 	
 	@DeleteMapping(value = "/{id}/excluir")
 	public void excluir(@PathVariable Integer id) {
-		
+		usuarioService.excluir(id);
 	}
 	
 	@GetMapping(value = "/listar")
 	public List<Usuario> obterLista(){
 
-		return null;
+		return usuarioService.obterLista();
 	}
 	
 	@PostMapping(value = "/validar")
 	public Usuario validar(@RequestParam String email, @RequestParam String senha) {
 
-		return null;
+		return usuarioService.validar(email, senha);
 	}
 }
